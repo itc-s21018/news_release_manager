@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    url: jdbc:mariadb://127.0.0.1:3306/news_release?characterEncoding=utf8
+    username: news
+    password: foobarhogepiyo
+    driver-class-name: org.mariadb.jdbc.Driver
+
+  jackson:
+    property-naming-strategy: SNAKE_CASE

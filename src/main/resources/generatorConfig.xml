@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD
+    MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <!-- -->
+    <classPathEntry
+            location="/home/s21018/.gradle/caches/modules-2/files-2.1/mysql/mysql-connector-java/8.0.29/16bfffda393ac4fe56f0985f1f035b37d3fc48f/mysql-connector-java-8.0.29.jar"/>
+    <context id="MySQLTables" targetRuntime="MyBatis3Kotlin">
+        <plugin type="org.mybatis.generator.plugins.MapperAnnotationPlugin"/>
+        <commentGenerator>
+            <property name="suppressDate" value="true"/>
+        </commentGenerator>
+        <jdbcConnection
+                driverClass="org.mariadb.jdbc.Driver"
+                connectionURL="jdbc:mariadb://127.0.0.1:3306/news_release"
+                userId="news"
+                password="foobarhogepiyo">
+            <property name="nullCatalogMeansCurrent" value="true"/>
+        </jdbcConnection>
+        <javaTypeResolver>
+            <property name="useJSR310Types" value="true"/>
+        </javaTypeResolver>
+        <javaModelGenerator
+                targetPackage="jp.ac.it_college.std.s21018.news_release_manager.infrastructure.database.record"
+                targetProject="src/main/kotlin">
+        </javaModelGenerator>
+        <javaClientGenerator targetPackage="jp.ac.it_college.std.s21018.news_release_manager.infrastructure.database.mapper"
+                             targetProject="src/main/kotlin">
+
+        </javaClientGenerator>
+        <table tableName="category"/>
+        <table tableName="news"/>
+        <table tableName="users">
+            <columnOverride column="role_type" typeHandler="org.apache.ibatis.type.EnumTypeHandler"
+                            javaType="jp.ac.it_college.std.s21018.news_release_manager.domain.enum.RoleType"/>
+        </table>
+    </context>
+</generatorConfiguration>
